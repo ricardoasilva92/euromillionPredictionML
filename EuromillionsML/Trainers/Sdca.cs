@@ -10,7 +10,7 @@ namespace EuromillionsML.Trainers
         public static void Predict()
         {
             MLContext mlContext = new MLContext(seed: 0);
-            var model = Train(mlContext, FileDirectories._trainDataPath);
+            var model = Train(mlContext, Constants._trainDataPath);
 
             Evaluate(mlContext, model);
 
@@ -87,7 +87,7 @@ namespace EuromillionsML.Trainers
 
         private static void Evaluate(MLContext mlContext, ITransformer model)
         {
-            IDataView dataView = mlContext.Data.LoadFromTextFile<EuroDrawnData>(FileDirectories._testDataPath, hasHeader: true, separatorChar: ',');
+            IDataView dataView = mlContext.Data.LoadFromTextFile<EuroDrawnData>(Constants._testDataPath, hasHeader: true, separatorChar: ',');
             var predictions = model.Transform(dataView);
 
             var metrics = mlContext.Regression.Evaluate(predictions, "Label", "Score");
@@ -112,7 +112,7 @@ namespace EuromillionsML.Trainers
                 Ball5 = 0,
                 Star1 = 0,
                 Star2 = 0,
-                Date = 1608249600
+                Date = Constants.dateToPredict
             };
 
             var prediction = predictionFunction.Predict(euroDrawnSample);
