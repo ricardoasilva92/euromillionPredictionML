@@ -1,12 +1,10 @@
 ﻿namespace EuromillionsML
 {
-    using Newtonsoft.Json.Linq;
-    using System.Collections.Generic;
-    using System.Net.Http;
-    using System.Text.Json;
-    using System.Threading.Tasks;
+	using System.Net.Http;
+	using System.Text.Json;
+	using System.Threading.Tasks;
 
-    public class EuromillionsService
+	public class EuromillionsService
     {
         private readonly string AllResultsUrl = "https://nunofcguerreiro.com/api-euromillions-json?result=all";
         private HttpClient client;
@@ -23,7 +21,5 @@
             
             return EuromillionServiceHelper.EuromillionDrawnsConverter(euromillionDrawnsDto);
         }
-
-        
     }
 }

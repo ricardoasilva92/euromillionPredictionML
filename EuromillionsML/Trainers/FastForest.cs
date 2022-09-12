@@ -117,13 +117,13 @@ namespace EuromillionsML.Trainers
 
             var prediction = predictionFunction.Predict(euroDrawnSample);
             Console.WriteLine($"****************FastForest Prediction****************");
-            Console.WriteLine($"Predicted Ball1: {prediction.Ball1:0.####}");
-            Console.WriteLine($"Predicted Ball2: {prediction.Ball2:0.####}");
-            Console.WriteLine($"Predicted Ball3: {prediction.Ball3:0.####}");
-            Console.WriteLine($"Predicted Ball4: {prediction.Ball4:0.####}");
-            Console.WriteLine($"Predicted Ball5: {prediction.Ball5:0.####}");
-            Console.WriteLine($"Predicted Star1: {prediction.Star1:0.####}");
-            Console.WriteLine($"Predicted Star2: {prediction.Star2:0.####}");
+            Console.WriteLine($"Predicted Ball1: {Math.Round(prediction.Ball1)}");
+            Console.WriteLine($"Predicted Ball2: {Math.Round(prediction.Ball2)}");
+            Console.WriteLine($"Predicted Ball3: {Math.Round(prediction.Ball3)}");
+            Console.WriteLine($"Predicted Ball4: {Math.Round(prediction.Ball4)}");
+            Console.WriteLine($"Predicted Ball5: {Math.Round(prediction.Ball5)}");
+            Console.WriteLine($"Predicted Star1: {Math.Round(prediction.Star1)}");
+            Console.WriteLine($"Predicted Star2: {Math.Round(prediction.Star2)}");
             Console.WriteLine();
         }
 
