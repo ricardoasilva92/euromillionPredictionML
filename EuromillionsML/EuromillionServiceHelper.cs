@@ -26,8 +26,20 @@ namespace EuromillionsML
         public static EuromillionDrawn EuromillionDrawnConverter(EuromillionDrawnDto drawnDto)
         {
             DateTime drawnDate = ParseStringToDate(drawnDto.date);
-            var balls = ParseNumbers(drawnDto.balls);
-            var stars = ParseNumbers(drawnDto.stars);
+            var balls = new List<int>()
+            {
+                Int16.Parse(drawnDto.ball_1),
+                Int16.Parse(drawnDto.ball_2),
+                Int16.Parse(drawnDto.ball_3),
+                Int16.Parse(drawnDto.ball_4),
+                Int16.Parse(drawnDto.ball_5),
+            };
+
+            var stars = new List<int>()
+            {
+                Int16.Parse(drawnDto.star_1),
+                Int16.Parse(drawnDto.star_2),
+            };
 
             var drawn = new EuromillionDrawn()
             {
@@ -38,13 +50,6 @@ namespace EuromillionsML
             return drawn;
         }
 
-        private static List<int> ParseNumbers(string balls)
-        {
-            var ballsSplit = balls.Split(' ');
-            var res = new List<int>();
-            ballsSplit.ToList().ForEach(x => res.Add(Int16.Parse(x)));
-            return res;
-        }
 
         private static DateTime ParseStringToDate(string date)
         {
