@@ -103,6 +103,7 @@ namespace EuromillionsML.Trainers
         private static void TestSinglePrediction(MLContext mlContext, ITransformer model)
         {
             var predictionFunction = mlContext.Model.CreatePredictionEngine<EuroDrawnData, EuroDrawnPrediction>(model);
+            var prizeDate = Helpers.NextPrizeDay();
             var euroDrawnSample = new EuroDrawnData()
             {
                 Ball1 = 0,
@@ -112,11 +113,12 @@ namespace EuromillionsML.Trainers
                 Ball5 = 0,
                 Star1 = 0,
                 Star2 = 0,
-                Date = Constants.dateToPredict
+                Date = prizeDate.Ticks
             };
 
             var prediction = predictionFunction.Predict(euroDrawnSample);
             Console.WriteLine($"**************FastTree Prediction**************");
+            Console.WriteLine($"****************For day {prizeDate.Day}/{prizeDate.Month}/{prizeDate.Year}****************");
             Console.WriteLine($"Predicted Ball1: {Math.Round(prediction.Ball1)}");
             Console.WriteLine($"Predicted Ball2: {Math.Round(prediction.Ball2)}");
             Console.WriteLine($"Predicted Ball3: {Math.Round(prediction.Ball3)}");

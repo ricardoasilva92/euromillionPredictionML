@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace EuromillionsML
 {
-    public static class EuromillionServiceHelper
+	public static class EuromillionServiceHelper
     {
         public static EuromillionDrawns EuromillionDrawnsConverter(EuromillionDrawnsDto euromillionDrawnsDto)
         {

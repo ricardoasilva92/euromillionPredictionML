@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EuromillionsML
+﻿namespace EuromillionsML
 {
-    public class EuromillionDrawnDto
+	public class EuromillionDrawnDto
     {
         public string date { get; set; }
         public string ball_1 { get; set; }

@@ -15,8 +15,8 @@ namespace EuromillionsML
 			//write to csv
 			CsvHelper.EuromillionDrawnsToCsv(allDrawns.drawns, "..\\..\\..\\Data\\drawns.csv");
 
-
-			FastTree.Predict();
+            //https://docs.microsoft.com/en-us/dotnet/machine-learning/tutorials/sentiment-analysis
+            FastTree.Predict();
             FastTreeTweedie.Predict();
             FastForest.Predict();
             Gam.Predict();
